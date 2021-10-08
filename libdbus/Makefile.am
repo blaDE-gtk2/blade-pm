@@ -1,23 +1,23 @@
 noinst_LTLIBRARIES = 			\
-	libxfpmdbus.la
+	libblpmdbus.la
 
-libxfpmdbus_la_SOURCES =		\
-	xfpm-dbus.c			\
-	xfpm-dbus.h			\
-	xfpm-dbus-monitor.c		\
-	xfpm-dbus-monitor.h		\
-	xfpm-unique.c			\
-	xfpm-unique.h			\
-	xfpm-dbus-marshal.c		\
-	xfpm-dbus-marshal.h		\
-	org.xfce.unique.h
+libblpmdbus_la_SOURCES =		\
+	blpm-dbus.c			\
+	blpm-dbus.h			\
+	blpm-dbus-monitor.c		\
+	blpm-dbus-monitor.h		\
+	blpm-unique.c			\
+	blpm-unique.h			\
+	blpm-dbus-marshal.c		\
+	blpm-dbus-marshal.h		\
+	org.blade.unique.h
 	
-libxfpmdbus_la_CFLAGS =			\
+libblpmdbus_la_CFLAGS =			\
 	$(GLIB_CFLAGS)			\
-	$(LIBXFCE4UTIL_CFLAGS)		\
+	$(LIBBLADEUTIL_CFLAGS)		\
 	$(DBUS_GLIB_CFLAGS)
 
-libxfpmdbus_la_LIBADD =			\
+libblpmdbus_la_LIBADD =			\
 	$(GLIB_LIBS)			\
 	$(DBUS_GLIB_LIBS)		\
 	$(DBUS_LIBS)
@@ -25,24 +25,24 @@ libxfpmdbus_la_LIBADD =			\
 if MAINTAINER_MODE
 
 BUILT_SOURCES =				\
-	xfpm-dbus-marshal.c		\
-	xfpm-dbus-marshal.h		\
-	org.xfce.unique.h
+	blpm-dbus-marshal.c		\
+	blpm-dbus-marshal.h		\
+	org.blade.unique.h
 
-xfpm-dbus-marshal.c: xfpm-dbus-marshal.list
-	echo "#include \"xfpm-dbus-marshal.h\"" > $@ && \
-	glib-genmarshal $< --prefix=_xfpm_dbus_marshal --body >> $@
+blpm-dbus-marshal.c: blpm-dbus-marshal.list
+	echo "#include \"blpm-dbus-marshal.h\"" > $@ && \
+	glib-genmarshal $< --prefix=_blpm_dbus_marshal --body >> $@
 
-xfpm-dbus-marshal.h: xfpm-dbus-marshal.list
-	glib-genmarshal $< --prefix=_xfpm_dbus_marshal --header > $@
+blpm-dbus-marshal.h: blpm-dbus-marshal.list
+	glib-genmarshal $< --prefix=_blpm_dbus_marshal --header > $@
 
-org.xfce.unique.h: org.xfce.unique.xml
+org.blade.unique.h: org.blade.unique.xml
 	dbus-binding-tool --mode=glib-server --prefix=xfce_unique $< >$@
 
 endif
 
 EXTRA_DIST =				\
-	xfpm-dbus-marshal.list
+	blpm-dbus-marshal.list
 
 DISTCLEANFILES =			\
 	$(BUILT_SOURCES)

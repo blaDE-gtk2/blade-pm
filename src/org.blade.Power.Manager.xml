@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<node name="/org/blade/PowerManager">
+    <interface name="org.blade.Power.Manager">
+        <annotation name="org.freedesktop.DBus.GLib.CSymbol"
+                    value="blpm_manager_dbus"/>
+        <annotation name="org.freedesktop.DBus.GLib.ClientCSymbol"
+                    value="blpm_manager_dbus_client"/>   
+     
+    <method name="Quit">
+    </method>
+    
+    <method name="Restart">
+    </method>
+    
+    <method name="GetConfig">
+	<arg direction="out" name="config" type="a{ss}"/>
+    </method>
+    
+    <method name="GetInfo">
+	<arg direction="out" name="name" type="s"/>
+        <arg direction="out" name="version" type="s"/>
+        <arg direction="out" name="vendor" type="s"/>
+    </method>
+	
+    </interface>
+</node>

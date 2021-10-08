@@ -1,5 +1,5 @@
 interfaces =					\
-	xfpm-settings.ui			\
+	blpm-settings.ui			\
 	acme.ui
 
 interfaces_h =					\
@@ -9,11 +9,11 @@ if MAINTAINER_MODE
 
 BUILT_SOURCES = $(interfaces_h)
 
-xfpm-settings_ui.h: xfpm-settings.ui
-	exo-csource --static --strip-comments --strip-content --name=xfpm_settings_ui $< > $@
+blpm-settings_ui.h: blpm-settings.ui
+	blxo-csource --static --strip-comments --strip-content --name=blpm_settings_ui $< > $@
 
 acme_ui.h: acme.ui
-	exo-csource --static --strip-comments --strip-content --name=acme_ui $< > $@
+	blxo-csource --static --strip-comments --strip-content --name=acme_ui $< > $@
 
 endif
 

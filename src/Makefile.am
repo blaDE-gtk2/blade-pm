@@ -1,53 +1,53 @@
-bin_PROGRAMS = xfce4-power-manager
+bin_PROGRAMS = blade-pm
 
-xfce4_power_manager_SOURCES =                   \
+blade_pm_SOURCES =                   \
 	$(BUILT_SOURCES)			\
-	xfpm-main.c				\
-	xfpm-manager.c				\
-	xfpm-manager.h				\
-	xfpm-power.c				\
-	xfpm-power.h				\
-	xfpm-battery.c				\
-	xfpm-battery.h				\
-	xfpm-xfconf.c				\
-	xfpm-xfconf.h				\
-	xfpm-console-kit.c			\
-	xfpm-console-kit.h			\
-	xfpm-systemd.c				\
-	xfpm-systemd.h				\
+	blpm-main.c				\
+	blpm-manager.c				\
+	blpm-manager.h				\
+	blpm-power.c				\
+	blpm-power.h				\
+	blpm-battery.c				\
+	blpm-battery.h				\
+	blpm-blconf.c				\
+	blpm-blconf.h				\
+	blpm-console-kit.c			\
+	blpm-console-kit.h			\
+	blpm-systemd.c				\
+	blpm-systemd.h				\
 	egg-idletime.c				\
 	egg-idletime.h				\
-	xfpm-backlight.c			\
-	xfpm-backlight.h			\
-	xfpm-kbd-backlight.c			\
-	xfpm-kbd-backlight.h			\
-	xfpm-dpms.c				\
-	xfpm-dpms.h				\
-	xfpm-button.c				\
-	xfpm-button.h				\
-	xfpm-network-manager.c			\
-	xfpm-network-manager.h			\
-	xfpm-inhibit.c				\
-	xfpm-inhibit.h				\
-	xfpm-notify.c				\
-	xfpm-notify.h				\
-	xfpm-polkit.c				\
-	xfpm-polkit.h				\
-	xfpm-errors.c				\
-	xfpm-errors.h				\
-	xfpm-suspend.c				\
-	xfpm-suspend.h				\
-	../panel-plugins/power-manager-plugin/power-manager-button.c	\
-	../panel-plugins/power-manager-plugin/power-manager-button.h	\
-	../panel-plugins/power-manager-plugin/scalemenuitem.c			\
-	../panel-plugins/power-manager-plugin/scalemenuitem.h
+	blpm-backlight.c			\
+	blpm-backlight.h			\
+	blpm-kbd-backlight.c			\
+	blpm-kbd-backlight.h			\
+	blpm-dpms.c				\
+	blpm-dpms.h				\
+	blpm-button.c				\
+	blpm-button.h				\
+	blpm-network-manager.c			\
+	blpm-network-manager.h			\
+	blpm-inhibit.c				\
+	blpm-inhibit.h				\
+	blpm-notify.c				\
+	blpm-notify.h				\
+	blpm-polkit.c				\
+	blpm-polkit.h				\
+	blpm-errors.c				\
+	blpm-errors.h				\
+	blpm-suspend.c				\
+	blpm-suspend.h				\
+	../bar-plugins/power-manager-plugin/power-manager-button.c	\
+	../bar-plugins/power-manager-plugin/power-manager-button.h	\
+	../bar-plugins/power-manager-plugin/scalemenuitem.c			\
+	../bar-plugins/power-manager-plugin/scalemenuitem.h
 
-xfce4_power_manager_CFLAGS =                    \
+blade_pm_CFLAGS =                    \
 	-I$(top_srcdir)                         \
 	-I$(top_srcdir)/common                  \
 	-I$(top_srcdir)/libdbus                 \
 	-DLOCALEDIR=\"$(localedir)\"            \
-	-DG_LOG_DOMAIN=\"xfce4-power-manager\"  \
+	-DG_LOG_DOMAIN=\"blade-pm\"  \
 	-DSYSCONFDIR=\"$(sysconfdir)\"          \
 	-DSBINDIR=\"$(sbindir)\"                \
 	-DUPOWER_ENABLE_DEPRECATED              \
@@ -56,8 +56,8 @@ xfce4_power_manager_CFLAGS =                    \
 	$(GOBJECT_CFLAGS)                       \
 	$(GTHREAD_CFLAGS)                       \
 	$(DBUS_GLIB_CFLAGS)                     \
-	$(LIBXFCE4UI_CFLAGS)                    \
-	$(XFCONF_CFLAGS)                        \
+	$(LIBBLADEUI_CFLAGS)                    \
+	$(BLCONF_CFLAGS)                        \
 	$(LIBNOTIFY_CFLAGS)                     \
 	$(UPOWER_CFLAGS)                        \
 	$(XRANDR_CFLAGS)			\
@@ -65,18 +65,18 @@ xfce4_power_manager_CFLAGS =                    \
 	$(PLATFORM_CPPFLAGS)			\
 	$(PLATFORM_CFLAGS)
 
-xfce4_power_manager_LDFLAGS =			\
+blade_pm_LDFLAGS =			\
 	-no-undefined				\
 	$(PLATFORM_LDFLAGS)
 
-xfce4_power_manager_LDADD =                     \
-	$(top_builddir)/common/libxfpmcommon.la \
-	$(top_builddir)/libdbus/libxfpmdbus.la  \
+blade_pm_LDADD =                     \
+	$(top_builddir)/common/libblpmcommon.la \
+	$(top_builddir)/libdbus/libblpmdbus.la  \
 	$(GOBJECT_LIBS)                         \
 	$(GTHREAD_LIBS)                         \
 	$(DBUS_GLIB_LIBS)                       \
-	$(LIBXFCE4UI_LIBS)                      \
-	$(XFCONF_LIBS)                          \
+	$(LIBBLADEUI_LIBS)                      \
+	$(BLCONF_LIBS)                          \
 	$(LIBNOTIFY_LIBS)                       \
 	$(UPOWER_LIBS)                          \
 	$(XRANDR_LIBS)				\
@@ -84,38 +84,38 @@ xfce4_power_manager_LDADD =                     \
 
 if ENABLE_POLKIT
 
-sbin_PROGRAMS = xfpm-power-backlight-helper     \
+sbin_PROGRAMS = blpm-power-backlight-helper     \
 	   xfce4-pm-helper
 
-xfpm_power_backlight_helper_SOURCES =           \
-       xfpm-backlight-helper.c
+blpm_power_backlight_helper_SOURCES =           \
+       blpm-backlight-helper.c
 
-xfpm_power_backlight_helper_LDADD =             \
+blpm_power_backlight_helper_LDADD =             \
        $(GLIB_LIBS)                             \
        -lm
 
-xfpm_power_backlight_helper_CFLAGS =            \
+blpm_power_backlight_helper_CFLAGS =            \
         $(GLIB_CFLAGS)                          \
 	$(PLATFORM_CPPFLAGS)			\
 	$(PLATFORM_CFLAGS)
 
 xfce4_pm_helper_SOURCES =  \
-	xfpm-pm-helper.c
+	blpm-pm-helper.c
 
 xfce4_pm_helper_CFLAGS =   \
 	-I$(top_srcdir)        \
 	$(GLIB_CFLAGS)         \
 	$(PLATFORM_CPPFLAGS)   \
 	$(PLATFORM_CFLAGS)     \
-	$(LIBXFCE4UTIL_CFLAGS)
+	$(LIBBLADEUTIL_CFLAGS)
 
 xfce4_pm_helper_LDFLAGS = \
-	$(LIBXFCE4UTIL_LIBS)  \
+	$(LIBBLADEUTIL_LIBS)  \
 	$(GLIB_LIBS)
 
 polkit_policydir = $(datadir)/polkit-1/actions
 polkit_policy_DATA =					\
-	org.xfce.power.policy
+	org.blade.power.policy
 
 # You will need a recent intltool or the patch from this bug
 # http://bugzilla.gnome.org/show_bug.cgi?id=462312
@@ -128,52 +128,52 @@ endif
 
 manpagedir = $(mandir)/man1
 
-manpage_DATA = xfce4-power-manager.1
+manpage_DATA = blade-pm.1
 
 BUILT_SOURCES =					\
-	xfce-power-manager-dbus-server.h	\
-	xfce-power-manager-dbus-client.h	\
-	xfpm-marshal.c                          \
-        xfpm-marshal.h				\
+	blade-pm-dbus-server.h	\
+	blade-pm-dbus-client.h	\
+	blpm-marshal.c                          \
+        blpm-marshal.h				\
 	org.freedesktop.PowerManagement.h       \
 	org.freedesktop.PowerManagement.Inhibit.h
 
 if MAINTAINER_MODE
 
-xfpm-marshal.c: xfpm-marshal.list
-	echo "#include \"xfpm-marshal.h\"" > $@ && \
-	glib-genmarshal $< --prefix=_xfpm_marshal --body >> $@
+blpm-marshal.c: blpm-marshal.list
+	echo "#include \"blpm-marshal.h\"" > $@ && \
+	glib-genmarshal $< --prefix=_blpm_marshal --body >> $@
 
-xfpm-marshal.h: xfpm-marshal.list
-	glib-genmarshal $< --prefix=_xfpm_marshal --header > $@
+blpm-marshal.h: blpm-marshal.list
+	glib-genmarshal $< --prefix=_blpm_marshal --header > $@
 
-xfce-power-manager-dbus-server.h: $(srcdir)/org.xfce.Power.Manager.xml
-	dbus-binding-tool --mode=glib-server --prefix=xfpm_manager $< >$@
+blade-pm-dbus-server.h: $(srcdir)/org.blade.Power.Manager.xml
+	dbus-binding-tool --mode=glib-server --prefix=blpm_manager $< >$@
 
-xfce-power-manager-dbus-client.h: $(srcdir)/org.xfce.Power.Manager.xml
-	dbus-binding-tool --mode=glib-client --prefix=xfpm_manager $< >$@
+blade-pm-dbus-client.h: $(srcdir)/org.blade.Power.Manager.xml
+	dbus-binding-tool --mode=glib-client --prefix=blpm_manager $< >$@
 
 org.freedesktop.PowerManagement.h: $(srcdir)/org.freedesktop.PowerManagement.xml
-	dbus-binding-tool --mode=glib-server --prefix=xfpm_power $< >$@
+	dbus-binding-tool --mode=glib-server --prefix=blpm_power $< >$@
 
 org.freedesktop.PowerManagement.Inhibit.h: $(srcdir)/org.freedesktop.PowerManagement.Inhibit.xml
-	dbus-binding-tool --mode=glib-server --prefix=xfpm_inhibit $< >$@
+	dbus-binding-tool --mode=glib-server --prefix=blpm_inhibit $< >$@
 
 endif
 
 @INTLTOOL_DESKTOP_RULE@
 autostartdir = $(sysconfdir)/xdg/autostart
-autostart_in_files = xfce4-power-manager.desktop.in
+autostart_in_files = blade-pm.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
 EXTRA_DIST =                                    \
-	xfpm-marshal.list			\
+	blpm-marshal.list			\
         $(autostart_in_files)                   \
-        org.xfce.power.policy.in2              \
+        org.blade.power.policy.in2              \
         $(manpage_DATA)
 
 DISTCLEANFILES =                                \
         $(BUILT_SOURCES)                        \
-        xfce4-power-manager.desktop             \
-        org.xfce.power.policy                  \
-        org.xfce.power.policy.in
+        blade-pm.desktop             \
+        org.blade.power.policy                  \
+        org.blade.power.policy.in

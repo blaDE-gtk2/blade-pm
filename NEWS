@@ -1,12 +1,12 @@
 1.4.4
 =====
-New stable release of xfce4-power-manager.
+New stable release of blade-pm.
 
 * Re-introduce the trayicon for better support of other DEs (Bug #11054)
 * Miscellaneous bug fixes:
  - Fix dbus call for CK2 suspend (Bug #11610)
  - Function check_for_consolekit2 is not used if !UP_CHECK_VERSION(0, 99, 0) (Bug #11657)
- - Fix xfpm panel plugin crashes at startup when the locale is not UTF8
+ - Fix blpm bar plugin crashes at startup when the locale is not UTF8
  - The scalemenuitem is actually an imagemenuitem
 
 * Translation updates:
@@ -17,7 +17,7 @@ New stable release of xfce4-power-manager.
 
 1.4.3
 =====
-New stable release of xfce4-power-manager.
+New stable release of blade-pm.
 
 * Miscellaneous bug fixes:
  - Handle autotools m4 stuff properly
@@ -30,8 +30,8 @@ New stable release of xfce4-power-manager.
  - Light Locker Integration (Bug #11488)
  - Add gmux_backlight as supported
    interface (bug #11406)
- - Reformat code in xfpm_power_get_property
- - Reformat code in xfpm_power_set_property
+ - Reformat code in blpm_power_get_property
+ - Reformat code in blpm_power_set_property
 
 * Translation updates:
  Arabic (ar), Asturian (ast), Bulgarian (bg),
@@ -47,7 +47,7 @@ New stable release of xfce4-power-manager.
 
 1.4.2
 =====
-New stable release of xfce4-power-manager.
+New stable release of blade-pm.
 
 * Miscellaneous bug fixes:
  Harald Judt:
@@ -74,7 +74,7 @@ Translation updates: Catalan (ca), Czech (cs),
 =====
 
 * Miscellaneous bug fixes:
- - Fix for panel icon not always updating depending on the
+ - Fix for bar icon not always updating depending on the
    version of UPower in use.
  - Fix handle lid switch with loginD (Bug 11160) Fixed by Simon P.
 
@@ -86,8 +86,8 @@ Translation updates: Czech (cs), Hebrew (he), Polish (pl),
 
 * Miscellaneous bug fixes:
  - Conditionally use xfce_dialog_show_help_with_version
- - Add support for lxpanel 0.7+ (Bug 11108)
- - Yves-Alexis Perez fixed the logic of xfconf logind inhibition keys
+ - Add support for lxbar 0.7+ (Bug 11108)
+ - Yves-Alexis Perez fixed the logic of blconf logind inhibition keys
  - plugin: update desktop file install location
  - plugin: Fix crash when devices (dis)connect
  - Point to versioned help docs
@@ -100,7 +100,7 @@ Translation updates: Czech (cs), Hebrew (he), Polish (pl),
  - Draw a bubble with a question mark if the device state is unknown
  - Keep blank and DPMS timeout settings in order
  - Fix typos in debug messages
- - Update AppData info about the panel plugins
+ - Update AppData info about the bar plugins
  - Never try to display the -missing icons
  - Add timestamp for 1.3.2 release to AppData
  - Add trailing colons in labels for Comboboxes and Spinbuttons
@@ -118,10 +118,10 @@ Translation updates: Bulgarian (bg), Chinese (China) (zh_CN),
 =====
 [Please note that this is a development release.]
 
-Development release of xfce4-power-manager.
+Development release of blade-pm.
 Please report all problems at bugzilla.xfce.org.
 
-  Since there is only one panel plugin left it was renamed from "Battery
+  Since there is only one bar plugin left it was renamed from "Battery
 Indicator Plugin" to "Power Manager Plugin", which is more fitting as it
 doesn't merely show the battery status.
 
@@ -147,19 +147,19 @@ Translation updates: Bulgarian (bg), Dutch (Flemish) (nl),
 =====
 [Please note that this is a development release.]
 
-Development release of xfce4-power-manager.
+Development release of blade-pm.
 Please report all problems at bugzilla.xfce.org.
 
  Xfce4-power-manager has changed how the xfce4-pm-helper application
 is used. Now the pm-helper is called by pkexec (provided by polkit),
-which means for users of xfpm that have UPower 0.99 installed and
+which means for users of blpm that have UPower 0.99 installed and
 aren't using LoginD everything will work as before. In 1.3.0 options
-in the settings dialogs were unavailable because xfpm was still
+in the settings dialogs were unavailable because blpm was still
 looking for the old UPower authorization rules which get uninstalled
 on the upgrade to UPower 0.99.
 
   Simon Steinbeiss and Harald Judt have contributed many improvements
-to the power manager settings dialog. Harald also added a minimum xfconf
+to the power manager settings dialog. Harald also added a minimum blconf
 value setting for the brightness slider so that users whose display goes
 completely dark at 0 can exclude that value if they desire.
 
@@ -182,7 +182,7 @@ users.
    dialog.
  - Improve strings in devices tab and add percentage (Bug #6652)
  - Fork before gtk/dbus init
- - Andrzej Added support for multi-row panel layouts for the plugin
+ - Andrzej Added support for multi-row bar layouts for the plugin
  - Restore screen power after sleep (Bug 10535)
  - Samuli Suominen fixed suspend/hibernate with UPower 0.9.23 (Bug 10931)
  - Carl Simonson added a notification popup when changing keyboard brightness
@@ -190,7 +190,7 @@ users.
  - Devices tab flickers on update (Bug 10937)
  - Improve lid-action strings (Bug #6515)
  - Carl Simonson added a reasonable step value for keyboard brightness
- - Let xfpm control X11's screensaver extension
+ - Let blpm control X11's screensaver extension
 
 Translation updates: Arabic (ar), Asturian (ast), Bulgarian (bg),
  Chinese (Taiwan) (zh_TW), Croatian (hr), Dutch (Flemish) (nl),
@@ -204,16 +204,16 @@ Translation updates: Arabic (ar), Asturian (ast), Bulgarian (bg),
 =====
 [Please note that this is a development release.]
 
-Development release of xfce4-power-manager.
+Development release of blade-pm.
 Please report all problems at bugzilla.xfce.org.
 
   This release has a large number of changes contributed by many
 developers and translators.
 
-  One of the most noticable changes to xfpm is a new panel plugin
+  One of the most noticable changes to blpm is a new bar plugin
 to monitor battery and device charge levels which replaces the
-trayicon. If anyone outside of Xfce was using xfce4-power-manager
-in a different panel, such as LXDE, and wants xfpm to continue to
+trayicon. If anyone outside of Xfce was using blade-pm
+in a different bar, such as LXDE, and wants blpm to continue to
 work there, request it in bugzilla and we'll work on it.
 
   The settings dialog has been completely restructured for better
@@ -221,9 +221,9 @@ oversight. Additionally, xfce4-power-information, a stand-alone
 application has now been embedded inside the settings dialog.
 
   A new version of Upower, 0.99.0, breaks it's API compability
-and xfpm required quite a bit of work to provide the same
+and blpm required quite a bit of work to provide the same
 functionality as previous versions of Upower. Concurrently,
-several developers added support for systemd-logind in xfpm.
+several developers added support for systemd-logind in blpm.
 Xfce4-power-manager added a xfce4-pm-helper application to
 suspend/hibernate on systems using upower 0.99.0 and higher.
 
@@ -231,7 +231,7 @@ suspend/hibernate on systems using upower 0.99.0 and higher.
 it now uses libnotify so they can appear with any installed
 notification daemon.
 
-  Simon Steinbeiss created new icons for xfpm (based on the
+  Simon Steinbeiss created new icons for blpm (based on the
 Adwaita icon-theme) covering all the different device types
 supported as well as all their individual states.
 
@@ -244,7 +244,7 @@ keyboard brightness control automatically.
   patch written by Martin Matuska.
 - Fix incorrect check for suspend permissions (bug #8438),
   patch written by Lionel Le Folgoc
-- Port xfpm to libupower-glib / add support for upower-0.99.0 API
+- Port blpm to libupower-glib / add support for upower-0.99.0 API
   patch written by Stefan Seyfried
 - Add shutdown/reboot functionality for systemd (Bug 10167)
   patch written by Andreas Müller and Guido Berhoerster
@@ -255,9 +255,9 @@ keyboard brightness control automatically.
   patch written by Sean Davis
 - Get rid of XfpmDeviceState and XfpmDeviceType
   patch written by Stefan Seyfried
-- xfpm_backlight_button_pressed_cb: fix popup display
+- blpm_backlight_button_pressed_cb: fix popup display
   patch written by Stefan Seyfried
-- Fix empty systray icon in some panels on battery removal and
+- Fix empty systray icon in some bars on battery removal and
   addition, patch written by Henry Gebhardt
 - Display power percentage in the device details, patch written
   by Pascal de Bruijn
@@ -270,13 +270,13 @@ keyboard brightness control automatically.
 - Add support for keyboard backlight control (Bug 10470)
   patch written by Sonal Santan
 - Don't call g_thread_init on newer versions of glib.
-- Fix typo in xfpm-power.c, patch written by Benjamin Kerensa
+- Fix typo in blpm-power.c, patch written by Benjamin Kerensa
 - Fix typo in error message, patch written by Ian
-- Updates from the pre-4.8 panel registration method for panel
+- Updates from the pre-4.8 bar registration method for bar
   plugins
 - Update xfce4-session lock-screen setting to by in sync with
   xfce4-session
-- Point to the online docs for xfpm's help
+- Point to the online docs for blpm's help
 - Fix uninitialized variables
 - Add a option for network manager sleep (Bug 10702)
 - Warn when no lock tool succeeded (Bug 6413)
@@ -359,7 +359,7 @@ Translation updates: Arabic (ar), Asturian (ast), Basque (eu),
 0.8.4.1
 =======
 - Because on some systems we might not have the brightness keys mapped.
-  LCD brightness change are not reflected to xfpm when keys are pressed, so
+  LCD brightness change are not reflected to blpm when keys are pressed, so
   save the actual brightness before dimming the screen on idle to restore it
   afterword. (bug #5811).
 - Check if DPMS is enabled before doing action on lid close event (bug #5805).

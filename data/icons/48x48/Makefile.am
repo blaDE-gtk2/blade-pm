@@ -12,26 +12,26 @@ Data_DATA =				\
 	phone.png			\
 	tablet.png			\
 	video-display.png		\
-	xfpm-ac-adapter.png		\
-	xfpm-primary-000.png		\
-	xfpm-primary-020.png		\
-	xfpm-primary-040.png		\
-	xfpm-primary-060.png		\
-	xfpm-primary-080.png		\
-	xfpm-primary-100.png		\
-	xfpm-primary-000-charging.png	\
-	xfpm-primary-020-charging.png	\
-	xfpm-primary-040-charging.png	\
-	xfpm-primary-060-charging.png	\
-	xfpm-primary-080-charging.png	\
-	xfpm-primary-100-charging.png	\
-	xfpm-primary-charged.png		\
-	xfpm-primary-missing.png		\
-	xfpm-ups-000.png		\
-	xfpm-ups-020.png		\
-	xfpm-ups-040.png		\
-	xfpm-ups-060.png		\
-	xfpm-ups-080.png		\
-	xfpm-ups-100.png		\
-	xfpm-brightness-keyboard.png	\
-	xfpm-brightness-lcd.png
+	blpm-ac-adapter.png		\
+	blpm-primary-000.png		\
+	blpm-primary-020.png		\
+	blpm-primary-040.png		\
+	blpm-primary-060.png		\
+	blpm-primary-080.png		\
+	blpm-primary-100.png		\
+	blpm-primary-000-charging.png	\
+	blpm-primary-020-charging.png	\
+	blpm-primary-040-charging.png	\
+	blpm-primary-060-charging.png	\
+	blpm-primary-080-charging.png	\
+	blpm-primary-100-charging.png	\
+	blpm-primary-charged.png		\
+	blpm-primary-missing.png		\
+	blpm-ups-000.png		\
+	blpm-ups-020.png		\
+	blpm-ups-040.png		\
+	blpm-ups-060.png		\
+	blpm-ups-080.png		\
+	blpm-ups-100.png		\
+	blpm-brightness-keyboard.png	\
+	blpm-brightness-lcd.png

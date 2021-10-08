@@ -2,8 +2,8 @@
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-if BUILD_PANEL_PLUGINS
-plugins_dir = panel-plugins
+if BUILD_BAR_PLUGINS
+plugins_dir = bar-plugins
 endif
 
 SUBDIRS =        	\
